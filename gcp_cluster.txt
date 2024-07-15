@@ -1,0 +1,18 @@
+https://chatgpt.com/share/bf6ce22d-397d-4c66-868a-d1774b15eb67
+
+google cloud permission:
+1. go to IAM
+2. Click edit
+3. Search storage admin and add
+4. search dataproc worker and add.
+
+set "internal_ip_only" false:
+1. gcloud config set project <PROJECT_NAME>
+gcloud config set compute/region <YOUR_REGION>
+gcloud compute networks subnets update default \
+    --enable-private-ip-google-access \
+    --region <YOUR_REGION>
+
+
+FIREWALL setup:
+gcloud compute firewall-rules list --filter="network:default"
